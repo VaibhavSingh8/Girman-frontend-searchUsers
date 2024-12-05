@@ -1,10 +1,13 @@
-import { Button } from "@/components/ui/button";
+import Container from "./components/Container";
+import Header from "./components/Header";
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
-    <>
-      <Button>Click me</Button>
-    </>
+    <Container>
+      <Header />
+      <Outlet />
+    </Container>
   );
 }
 
