@@ -1,10 +1,15 @@
-import { Button } from "@/components/ui/button";
+import Container from "./components/Container";
+import Header from "./components/Header";
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
-    <>
-      <Button>Click me</Button>
-    </>
+    <Container>
+      <Header />
+      <main className="flex-grow pt-20 overflow-hidden">
+        <Outlet />
+      </main>
+    </Container>
   );
 }
 
