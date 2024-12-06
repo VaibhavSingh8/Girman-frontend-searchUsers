@@ -6,7 +6,7 @@ function App() {
   return (
     <Container>
       <Header />
-      <main className="flex-grow overflow-hidden pt-20">
+      <main className="flex-grow pt-20 overflow-hidden">
         <Outlet />
       </main>
     </Container>

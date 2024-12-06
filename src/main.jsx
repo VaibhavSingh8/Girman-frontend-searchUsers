@@ -12,7 +12,7 @@ createRoot(document.getElementById("root")).render(
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
-          <Route path="search/users" element={<UsersSearch />} />
+          <Route path="search/users/:first_name" element={<UsersSearch />} />
         </Route>
       </Routes>
     </BrowserRouter>

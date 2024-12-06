@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 
-function Navigation() {
+// eslint-disable-next-line react/prop-types
+function Navigation({ className }) {
   const linkClasses = ({ isActive }) =>
     `cursor-pointer text-lg font-normal leading-7 
    relative 
@@ -13,7 +14,7 @@ function Navigation() {
    ${isActive ? "text-[#3063E6] after:w-full" : ""}`;
 
   return (
-    <nav className="flex gap-8 items-center max-w-sm font-inter">
+    <nav className={`flex gap-8 items-center max-w-sm font-inter ${className}`}>
       <NavLink to="/" className={linkClasses}>
         SEARCH
       </NavLink>
