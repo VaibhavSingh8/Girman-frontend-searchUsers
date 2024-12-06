@@ -25,9 +25,13 @@ function Home() {
       />
 
       <div className="flex flex-col items-center justify-center z-10 mx-auto my-36 max-w-lg">
-        <img src={inputLogo} alt="Input Logo" className="h-28 mb-8" />
+        <img
+          src={inputLogo}
+          alt="Input Logo"
+          className="w-11/12 md:w-full md:h-28 mb-8"
+        />
 
-        <div className="relative w-full">
+        <div className="relative w-11/12 md:w-full">
           <Input
             className="border border-[#D7D7EA] bg-[#FFFFFF] pl-10 focus-visible:ring-zinc-200 active:shadow-lg focus:shadow-md w-full"
             type="text"
