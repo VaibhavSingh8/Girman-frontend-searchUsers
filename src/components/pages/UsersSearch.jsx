@@ -1,12 +1,12 @@
 import { useParams } from "react-router-dom";
-import useFetch from "../hooks/useFetch";
+import useFetch from "../../hooks/useFetch";
 import {
   Card,
   CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
-} from "../components/ui/card";
+} from "../ui/card";
 
 import {
   Dialog,
@@ -17,14 +17,15 @@ import {
   DialogTitle,
   DialogTrigger,
   DialogClose,
-} from "../components/ui/dialog";
+} from "../ui/dialog";
 
-import profilePic from "../assets/profile.svg";
-import profile2 from "../assets/profile2.svg";
-import noResults from "../assets/noResults.svg";
+import profilePic from "../../assets/profile.svg";
+import profile2 from "../../assets/profile2.svg";
+import noResults from "../../assets/noResults.svg";
 
 import { Phone, MapPin } from "lucide-react";
-import { Button } from "../components/ui/button";
+import { Button } from "../ui/button";
+import SearchBar from "../SearchBar";
 
 function UsersSearch() {
   const { first_name } = useParams();
@@ -43,6 +44,10 @@ function UsersSearch() {
   return (
     <div className="flex flex-col items-center h-full mx-auto overflow-auto">
       <div className="flex flex-col items-center h-full sm:w-3/4 md:w-full my-16 max-w-screen-lg">
+        <SearchBar
+          placeholder="Search"
+          className="w-full mb-4 -mt-6 md:hidden"
+        />
         {users.length > 0 ? (
           <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
             {users.map((user, i) => (
@@ -125,14 +130,21 @@ function UsersSearch() {
             ))}
           </div>
         ) : (
-          <div className="flex justify-center items-center">
-            <div className="absolute inset-0 bg-gradient-to-b from-white to-[#B1CBFF] z-0"></div>
-            <img
-              src={noResults}
-              alt="No results found"
-              className="relative w-3/4 mt-32 md:mt-20"
+          <>
+            <SearchBar
+              placeholder="Search"
+              className="w-3/4 -mt-10 md:hidden z-10"
             />
-          </div>
+            <div className="flex justify-center items-center">
+              <div className="absolute inset-0 bg-gradient-to-b from-white to-[#B1CBFF] z-0"></div>
+
+              <img
+                src={noResults}
+                alt="No results found"
+                className="relative w-3/4 mt-32 md:mt-20"
+              />
+            </div>
+          </>
         )}
       </div>
     </div>
