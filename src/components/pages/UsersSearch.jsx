@@ -30,10 +30,10 @@ import SearchBar from "../SearchBar";
 function UsersSearch() {
   const { first_name } = useParams();
 
+  const BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
   const { data, loading, error } = useFetch(
-    `https://girman-assignment-backend.onrender.com/api/users/search/?first_name=${encodeURIComponent(
-      first_name
-    )}`
+    `${BASE_URL}/api/users/search/?first_name=${encodeURIComponent(first_name)}`
   );
 
   const users = data ? data.result : [];
