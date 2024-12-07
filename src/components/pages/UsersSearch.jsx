@@ -31,7 +31,7 @@ function UsersSearch() {
   const { first_name } = useParams();
 
   const { data, loading, error } = useFetch(
-    `http://127.0.0.1:8000/api/users/search/?first_name=${encodeURIComponent(
+    `https://girman-assignment-backend.onrender.com/api/users/search/?first_name=${encodeURIComponent(
       first_name
     )}`
   );
