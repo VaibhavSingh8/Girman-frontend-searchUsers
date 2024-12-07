@@ -7,5 +7,4 @@ export default {
       inter: ["inter", "system-ui"],
     },
   },
-  plugins: [require("tailwindcss-animate")],
 };
